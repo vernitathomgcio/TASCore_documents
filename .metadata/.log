@@ -17,3 +17,37 @@ java.lang.NullPointerException
 	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.dispatchEvent(BundleContextImpl.java:847)
 	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
 	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+!SESSION 2019-09-25 12:52:34.535 -----------------------------------------------
+eclipse.buildId=unknown
+java.fullversion=JRE 1.7.0 IBM J9 2.6 Windows 7 amd64-64 Compressed References 20170718_357001 (JIT enabled, AOT enabled)
+J9VM - R26_Java726_SR10_20170718_1208_B357001
+JIT  - r11_20170718_357001
+GC   - R26_Java726_SR10_20170718_1208_B357001_CMPRSS
+J9CL - 20170718_357001
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  list changes -r https://clm.rational.oit.va.gov/ccm -w tascore_doc_wksp_git7 -j _ZJlGMPMrEeiQ0NmDcRLf4g
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data @noDefault list changes -r https://clm.rational.oit.va.gov/ccm -w tascore_doc_wksp_git7 -j _ZJlGMPMrEeiQ0NmDcRLf4g
+
+!ENTRY com.ibm.team.filesystem.client 4 0 2019-09-25 12:52:42.437
+!MESSAGE Could not initialize component sync context
+!STACK 0
+com.ibm.team.repository.common.NotLoggedInException: CRJAZ1244I Not logged in to the repository at URL "https://clm.rational.oit.va.gov/ccm/".
+	at com.ibm.team.repository.client.internal.ServiceInterfaceProxy.ensureLoggedIn(ServiceInterfaceProxy.java:325)
+	at com.ibm.team.repository.client.internal.ServiceInterfaceProxy.validateServiceCall(ServiceInterfaceProxy.java:271)
+	at com.ibm.team.repository.client.internal.ServiceInterfaceProxy.invoke(ServiceInterfaceProxy.java:109)
+	at com.sun.proxy.$Proxy1.fetchOrRefreshItems(Unknown Source)
+	at com.ibm.team.repository.client.internal.ItemManager$4.run(ItemManager.java:1672)
+	at com.ibm.team.repository.client.internal.ItemManager$4.run(ItemManager.java:1)
+	at com.ibm.team.repository.client.internal.TeamRepository$3.run(TeamRepository.java:1355)
+	at com.ibm.team.repository.common.transport.CancelableCaller.call(CancelableCaller.java:79)
+	at com.ibm.team.repository.client.internal.TeamRepository.callCancelableService(TeamRepository.java:1350)
+	at com.ibm.team.repository.client.internal.TeamPlatformObject.callCancelableService(TeamPlatformObject.java:42)
+	at com.ibm.team.repository.client.internal.ItemManager.internalFetchItems(ItemManager.java:1667)
+	at com.ibm.team.repository.client.internal.ItemManager.access$3(ItemManager.java:1625)
+	at com.ibm.team.repository.client.internal.ItemManager$AbstractStore.retrieveItems(ItemManager.java:227)
+	at com.ibm.team.repository.client.internal.ItemManager$CurrentStore.fetchItems(ItemManager.java:373)
+	at com.ibm.team.repository.client.internal.ItemManager.fetchCompleteItems(ItemManager.java:892)
+	at com.ibm.team.filesystem.rcp.core.internal.changes.ComponentSyncManager.create(ComponentSyncManager.java:600)
+	at com.ibm.team.filesystem.rcp.core.internal.changes.ComponentSyncManager.update(ComponentSyncManager.java:344)
+	at com.ibm.team.filesystem.rcp.core.internal.changes.util.listeners.UpdateChangesJob.run(UpdateChangesJob.java:208)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
